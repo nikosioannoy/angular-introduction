@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular-introduction';
+  name = 'Nikos'; //Data binding me to html arxeio
+
+  person = {
+    givenName: 'Nikos',
+    surName: 'Ioannou',
+    age: 25,
+    email: 'nikosioannoy@aueb.gr'
+  }
 }
