@@ -13,6 +13,7 @@ export class PersonTableComponent {
     givenName: 'Nikos',
     surName: 'Ioannou',
     age: 25,
-    email: 'nikosioannoy@aueb.gr'
+    email: 'nikosioannoy@aueb.gr',
+    address: 'Preveza, Greece'
   }
 }
