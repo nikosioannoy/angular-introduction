@@ -10,7 +10,7 @@
   </thead>
   <tbody>
       @for(row of data; track row) {
-          <tr class="align-middle">
+          <tr class="align-middle" (dblclick)="onPersonClicked(row)"> <!--Se kathe row an kanw double click to row auto pernaei sto onPersonClicked-->
               <td>{{row.givenName}}</td>
               <td>{{row.surName}}</td>
               <td>{{row.age}}</td>
