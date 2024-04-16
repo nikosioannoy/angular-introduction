@@ -81,4 +81,20 @@ export class UserRegistrationComponent {
     }
   }
 
+  //Elegxos an uparxei to email HDH enw to grafei o xrhsths (blur)
+  check_duplicate_email() {
+    const email = this.form.get('email').value //email apo formControlName (html)
+    this.userService.check_duplicate_email(email).subscribe({
+      next: (response) => {
+        console.log(response.msg)
+        this.form.get('email').setErrors(null)
+      },
+      error: (response) => {
+        const message = response.error.msg
+        console.log(message)
+        this.form.get('email').setErrors({duplicateEmail: true})
+      }
+    })
+  }
+
 }
