@@ -51,11 +51,15 @@ export class UserRegistrationComponent {
   onSubmit(value: any) {
     console.log(value)
 
+    //To kanoume cast san User gia na mporoume na exoume elegxo tipwn
     const user = this.form.value as User
     //onSubmit simainei oti h forma einai valid ARA twra mporoume na sbisoume to confirmPassword
     //gia na steiloume apla to password xoris to confirmPassword sto back end
     delete user['confirmPassword']
-
+    //Subscribe gia HTTP Client calls. Gia xeirismo observables.
+    //Gia na asxoloume me to ti mou epistrefei.
+    //Edw px epistrefei oti (1on hrthan DATA apo thn klhsh (200 code),
+    //H 2on error code 400)
     this.userService.registerUser(user).subscribe({
       next: (response) => {
         console.log('User registered', response.msg)
